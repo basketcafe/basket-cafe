@@ -1,0 +1,902 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 1000;
+}
+
+/* ================= LOGO ================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+}
+
+.logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
+}
+
+.logo span {
+    display: inline-block;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 17px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d4a017;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.50),
+            rgba(0, 0, 0, 0.50)
+        ),
+        url("gracehotel.jpg");
+
+    animation: heroSlideshow 15s infinite;
+}
+
+/* ================= HERO SLIDESHOW ================= */
+
+@keyframes heroSlideshow {
+
+    0%,
+    30% {
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, 0.50),
+                rgba(0, 0, 0, 0.50)
+            ),
+            url("gracehotel.jpg");
+
+        background-position: center;
+        background-size: cover;
+    }
+
+    33%,
+    63% {
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, 0.50),
+                rgba(0, 0, 0, 0.50)
+            ),
+            url("gracet.jpg");
+
+        background-position: center;
+        background-size: cover;
+    }
+
+    66%,
+    100% {
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, 0.50),
+                rgba(0, 0, 0, 0.50)
+            ),
+            url("food.jpg");
+
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* ================= HERO TEXT ================= */
+
+.hero-text {
+    width: 100%;
+    max-width: 950px;
+    padding: 25px;
+    color: #fff;
+}
+
+.hero-text h1 {
+    font-size: 45px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.en-subtitle {
+    opacity: 0.95;
+}
+
+/* ================= TYPING ================= */
+
+#typing-text {
+    display: inline-block;
+    border-right: 3px solid #fff;
+    padding-right: 7px;
+    animation: cursorBlink 0.7s infinite;
+}
+
+@keyframes cursorBlink {
+
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* ================= GENERAL SECTIONS ================= */
+
+.about,
+.contact {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.services-section,
+.gallery {
+    padding: 75px 5%;
+    text-align: center;
+}
+
+.services-section {
+    background: #fff;
+}
+
+.gallery {
+    background: #f9f9f9;
+}
+
+/* ================= HEADINGS ================= */
+
+h2 {
+    font-size: 30px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    color: #222;
+}
+
+.en-title {
+    display: inline-block;
+    font-size: 0.85em;
+    margin-left: 5px;
+}
+
+.section-desc {
+    max-width: 850px;
+    margin: 0 auto 40px;
+    color: #666;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* ================= ABOUT ================= */
+
+.about p {
+    max-width: 850px;
+    margin: 0 auto 18px;
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+.en-desc {
+    color: #666;
+}
+
+/* ================= SERVICES ================= */
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* ================= SERVICE CARDS ================= */
+
+.service-card {
+    width: 280px;
+
+    background: #fff;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* ================= SERVICE IMAGES ================= */
+
+.service-card img {
+    width: 100%;
+    height: 210px;
+
+    display: block;
+
+    object-fit: cover;
+
+    animation: none !important;
+    transform: none !important;
+}
+
+/* ================= CARD TEXT ================= */
+
+.room-info {
+    padding: 20px;
+
+    text-align: left;
+
+    background: #fff;
+
+    flex-grow: 1;
+}
+
+.room-info h3 {
+    color: #222;
+
+    font-size: 19px;
+
+    line-height: 1.5;
+
+    margin-bottom: 10px;
+}
+
+.room-info p {
+    color: #555;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-grid {
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.20);
+
+    animation:
+        galleryMove
+        7s
+        ease-in-out
+        infinite
+        alternate;
+
+    transform-origin: center center;
+}
+
+/* ================= GALLERY MOVEMENT ================= */
+
+@keyframes galleryMove {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1.08);
+    }
+}
+
+/* ================= LIGHTBOX ================= */
+
+.lightbox {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 9999;
+
+    background:
+        rgba(0, 0, 0, 0.92);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.lightbox img {
+    max-width: 85%;
+    max-height: 85%;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+/* ================= CLOSE BUTTON ================= */
+
+.close-lightbox {
+    position: absolute;
+
+    top: 15px;
+    right: 25px;
+
+    color: #fff;
+
+    font-size: 45px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 10002;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.close-lightbox:hover {
+    transform: scale(1.1);
+}
+
+/* ================= GALLERY ARROWS ================= */
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    color: #fff;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    z-index: 10001;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition:
+        background 0.3s ease,
+        transform 0.2s ease;
+}
+
+.prev-btn {
+    left: 25px;
+}
+
+.next-btn {
+    right: 25px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background: #d4a017;
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    background: #fff;
+}
+
+.contact h2 {
+    margin-bottom: 25px;
+}
+
+.contact p {
+    font-size: 18px;
+    margin-top: 15px;
+    line-height: 1.7;
+}
+
+.contact a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    color: #d4a017;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 28px 20px;
+
+    text-align: center;
+
+    background: #222;
+
+    color: #fff;
+
+    line-height: 1.8;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+/* ================================================= */
+/* ================= TABLET / MOBILE =============== */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+    /* ================= HEADER ================= */
+
+    header {
+        flex-direction: column;
+
+        padding: 15px 10px;
+
+        gap: 12px;
+    }
+
+    .logo {
+        justify-content: center;
+
+        font-size: 21px;
+
+        text-align: center;
+    }
+
+    .logo img {
+        width: 55px;
+        height: 55px;
+    }
+
+    nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 8px 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+        height: 75vh;
+
+        min-height: 500px;
+
+        background-size: cover !important;
+
+        background-position: center !important;
+    }
+
+    .hero-text {
+        padding: 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+
+        line-height: 1.5;
+
+        margin-bottom: 15px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+
+        line-height: 1.7;
+
+        margin-bottom: 12px;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    .about,
+    .contact {
+        padding: 50px 20px;
+    }
+
+    .services-section,
+    .gallery {
+        padding: 50px 0;
+    }
+
+    h2 {
+        font-size: 27px;
+
+        line-height: 1.5;
+
+        padding: 0 15px;
+    }
+
+    .section-desc {
+        padding: 0 20px;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    /* ================= SERVICE CARDS ================= */
+
+    .services-container {
+        display: block;
+
+        width: 100%;
+    }
+
+    .service-card {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin: 0 0 30px 0;
+
+        border-radius: 0 !important;
+
+        box-shadow:
+            0 3px 10px
+            rgba(0, 0, 0, 0.10);
+    }
+
+    .service-card img {
+        width: 100% !important;
+
+        height: 240px !important;
+
+        display: block !important;
+
+        object-fit: cover !important;
+
+        margin: 0 !important;
+
+        animation: none !important;
+
+        transform: none !important;
+    }
+
+    /* ================= MOBILE CARD TEXT ================= */
+
+    .room-info {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 18px 20px 22px !important;
+
+        text-align: center !important;
+
+        background: #fff;
+    }
+
+    .room-info h3 {
+        font-size: 18px !important;
+
+        line-height: 1.5;
+
+        margin-bottom: 8px;
+    }
+
+    .room-info p {
+        font-size: 13px !important;
+
+        line-height: 1.7;
+    }
+
+    /* ================= MOBILE GALLERY ================= */
+
+    .gallery-grid {
+        width: 100%;
+
+        padding: 0 10px;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+
+        height: 170px;
+
+        border-radius: 8px;
+
+        object-fit: cover;
+
+        animation:
+            galleryMoveMobile
+            7s
+            ease-in-out
+            infinite
+            alternate;
+    }
+
+    @keyframes galleryMoveMobile {
+
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+
+        100% {
+            transform: scale(1.09);
+        }
+    }
+
+    /* ================= MOBILE LIGHTBOX ================= */
+
+    .lightbox {
+        padding: 10px;
+    }
+
+    .lightbox img {
+        max-width: 88%;
+
+        max-height: 75%;
+
+        border-radius: 5px;
+    }
+
+    .close-lightbox {
+        top: 12px;
+
+        right: 15px;
+
+        font-size: 38px;
+    }
+
+    .prev-btn,
+    .next-btn {
+        width: 45px;
+
+        height: 45px;
+
+        font-size: 25px;
+    }
+
+    .prev-btn {
+        left: 8px;
+    }
+
+    .next-btn {
+        right: 8px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+        padding: 22px 15px;
+
+        font-size: 13px;
+    }
+}
+/* ================================================= */
+/* ================= SMALL PHONE ==================== */
+/* ================================================= */
+
+@media (max-width: 400px) {
+
+    /* ================= LOGO ================= */
+
+    .logo {
+        font-size: 19px;
+
+        gap: 7px;
+    }
+
+    .logo img {
+        width: 50px;
+
+        height: 50px;
+    }
+
+    /* ================= NAV ================= */
+
+    nav {
+        gap: 6px 9px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+        height: 70vh;
+
+        min-height: 450px;
+    }
+
+    .hero-text {
+        padding: 12px;
+    }
+
+    .hero-text h1 {
+        font-size: 24px;
+
+        line-height: 1.5;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    /* ================= HEADINGS ================= */
+
+    h2 {
+        font-size: 22px;
+    }
+
+    /* ================= CARD ================= */
+
+    .service-card img {
+        height: 220px !important;
+    }
+
+    .room-info {
+        padding:
+            17px
+            12px
+            20px !important;
+    }
+
+    .room-info h3 {
+        font-size: 17px !important;
+    }
+
+    .room-info p {
+        font-size: 12.5px !important;
+    }
+
+    /* ================= GALLERY ================= */
+
+    .gallery-grid img {
+        height: 145px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact p {
+        font-size: 16px;
+    }
+}
